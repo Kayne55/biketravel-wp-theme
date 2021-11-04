@@ -1,0 +1,841 @@
+/*-------------------
+# BOOTSTRAP OVERRIDES
+-------------------*/
+
+:root {
+    --primary: #00B2AF;
+    --primary: var(--bt-primary) !important;
+    --secondary: #FF5C00;
+    --secondary: var(--bt-accent) !important;
+}
+
+/* NAVBAR */
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-light .navbar-nav .nav-link, .dropdown-item {
+    color: #00B2AF;
+    color: var(--bt-primary);
+    font-size: 20px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .dropdown-item:hover {
+    color: #FF5C00;
+    color: var(--bt-accent);
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left: 1.5rem;
+    }
+}
+
+/* BUTTONS */
+
+.btn {
+    border-radius: 0px;
+    padding: .2rem 1rem;
+    line-height: 1.4;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #00B2AF;
+    background-color: var(--bt-primary);
+    border-color: #00B2AF;
+    border-color: var(--bt-primary);
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #00807D;
+    background-color: var(--bt-primary-dark);
+    border-color: #00807D;
+    border-color: var(--bt-primary-dark);
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #FF5C00;
+    background-color: var(--bt-accent);
+    border-color: #FF5C00;
+    border-color: var(--bt-accent);
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #B24000;
+    background-color: var(--bt-accentdark);
+    border-color: #B24000;
+    border-color: var(--bt-accentdark);
+}
+
+.btn-outline-primary {
+    color: #00B2AF;
+    color: var(--bt-primary);
+    border-color: #00B2AF;
+    border-color: var(--bt-primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: #00B2AF;
+    background-color: var(--bt-primary);
+    border-color: #00B2AF;
+    border-color: var(--bt-primary);
+}
+
+/* PILLS */
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: var(--bt-primary);
+}
+
+/* Collapsable Menus */
+
+.btn-link {
+    font-weight: 400;
+    color: var(--bt-primary);
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    font-weight: 400;
+    color: var(--bt-primary-dark);
+    text-decoration: none;
+}
+
+.btn-link.focus, .btn-link:focus {
+    text-decoration: none;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+/*-------------------------
+# BIKE TRAVEL CUSTOM STYLES
+-------------------------*/
+
+/* --- GLOBAL CSS VARIABLES --- */
+
+:root {
+    /* Bike Travel Variables */
+    --bt-primary: #00B2AF;
+    --bt-primary-dark: #00807D;
+    --bt-accent: #FF5C00;
+    --bt-accentdark: #B24000;
+    --bt-lightgrey: #e6e6e6;
+    --bt-grey: #777;
+    --bt-darkgrey: #555;
+    --bt-charcoal: #333;
+    --bt-font-header: 'Teko';
+    --bt-font-subheader: 'Helvetica', 'Open Sans', sans-serif;
+    
+    /* Bootstrap Variable Overrides */
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #00B2AF;
+    --secondary: #FF5C00;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* --- COLORS --- */
+
+.bt-bgprimary {
+    background-color: #00B2AF;
+    background-color: var(--bt-primary);
+}
+
+.bt-fontprimary {
+    color: #00B2AF;
+    color: var(--bt-primary); 
+}
+
+.bt-border-primary {
+    border-color: #00B2AF;
+    border-color: var(--bt-primary);
+}
+
+.bt-bgsecondary {
+    background-color: #FF5C00;
+    background-color: var(--bt-accent);
+}
+
+.bt-fontsecondary {
+    color: #FF5C00;;
+    color: var(--bt-accent);
+}
+
+.bt-border-secondary {
+    border-color: #FF5C00;;
+    border-color: var(--bt-accent);
+}
+
+/* --- FONTS --- */
+
+html {
+    line-height: 1.4;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica', 'Open Sans', sans-serif; /* Fallback */
+    font-family: var(--bt-font-subheader);
+    color: #777; /* Fallback */
+    color: var(--bt-grey);
+    line-height: 1.4;
+}
+
+h1 {
+    font-family: 'Teko', 'Helvetica', 'Open Sans', sans-serif; /* Fallback */
+    font-family: var(--bt-font-header);
+    font-weight: 600 !important;
+    font-size: 3rem;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', 'Open Sans', sans-serif;
+}
+
+.bt-display-heading {
+    font-family: var(--bt-font-header);
+}
+
+a {
+    color: var(--bt-primary);
+}
+
+a:hover {
+    color: var(--bt-primary-dark);
+    text-decoration: none;
+}
+
+/* --- Pages, Articles, Comments, Meta --- */
+
+.bt-pagewrapper {
+    margin-top: 140px;
+}
+
+.bt-article h1 {
+    color: var(--bt-charcoal);
+    font-size: 4rem;
+}
+
+.bt-article-meta {
+    font-size: .75rem;
+}
+
+.bt-article-meta span {
+    padding: 0 .5rem;
+}
+
+.bt-article-meta span:not(:last-child) {
+    border-right: 1px solid #777;
+}
+
+.bt-article-meta a {
+    color: #777;
+}
+
+.bt-article-meta a:hover {
+    color: var(--bt-primary);
+}
+
+/* --- Navigation --- */
+
+.bt-header-brand {
+    width: 100%;
+    max-width: 100px;
+    transition: 0.4s;
+}
+
+.bt-topnav {
+    max-height: 35px;
+    padding: 3px 0;
+    font-size: 12px;
+    text-transform: capitalize;
+    overflow: hidden;
+    background-color: #ccc; /* Fallback */
+    background-color: var(--bt-lightgrey);
+}
+
+.bt-topnav a {
+    color: #444; /* Fallback */
+    color: var(--bt-darkgrey);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.bt-topnav a:hover {
+    color: #00B2AF; /* Fallback */
+    color: var(--bt-primary);
+}
+
+.bt-topnav>ul>li {
+    margin: 0 10px;
+}
+
+.bt-topnav>ul>li>form>select {
+    height: 22px;
+    margin-right: -10px;
+    padding: 1px;
+    font-size: 10px;
+}
+
+.bt-navbar {
+    background-color: white !important;
+}
+
+.bt-navbar-sticky {
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.bt-navbar ul li a {
+    font-family: 'Teko', 'Helvetica', 'Open Sans', sans-serif;
+    font-family: var(--bt-font-header);
+}
+
+/* --- Jumbotron Header --- */
+
+.bt-jumbo-header {
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    word-break: break-word;
+    padding-top: calc(2rem + 96px);
+    padding-bottom: 2rem;
+}
+
+.bt-jumbo-header h1 {
+    line-height: 0.8;
+    text-transform: uppercase;
+    font-size: 4.5rem;
+
+}
+
+.bt-jumbo-header a {
+    color: white;
+}
+
+.bt-jumbo-header a:hover {
+    color: var(--bt-primary);
+}
+
+.bt-jumbo-header .container {
+    position: relative;
+}
+
+/* --- Utilities --- */
+
+/* Overlays */
+
+.bt-overlay-30 {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+}
+
+/* Remove Focus Styles for Non Keyboard User */
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+/* --- Homepage Search Box --- */
+
+.bt-searchbox-home {
+    margin-top: -4rem;
+}
+
+.bt-searchbox-home h3 {
+    font-size: 1.2rem;
+}
+
+.bt-searchbox-home form input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px;
+    line-height: 1.2;
+    height: 25px;
+    font-size: 0.8rem;
+}
+
+/* --- Bike Travel Buttons --- */
+
+.bt-button-xs {
+    font-size: 0.9rem;
+}
+
+.bt-button-xl {
+    padding: .5rem 1rem;
+}
+
+/* --- Trip Cards --- */
+
+.bt-tripcard {
+    box-shadow: 0px 0px 10px rgba(70, 31, 31, 0.3);
+    border: none;
+    border-radius: 0px;
+}
+
+/* --- Category Grid View --- */
+
+.bt-tripcard-grid {
+    min-width: 18rem;
+    max-width: 32rem;
+    min-height: 18rem;
+    max-height: 32rem;
+    margin: 25px auto;
+}
+
+.bt-tripcard-grid-image {
+    /*height: 12rem;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 1rem;
+    color: white;
+}
+
+.bt-tripcard-title {
+    text-align: center;
+    font-size: 2.3rem;
+    position: relative;
+    line-height: 2rem;
+    height: 9rem;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bt-tripcard-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: -1rem;
+}
+
+.bt-tripcard-grid .card-body {
+    padding: .8rem 1rem 1rem 1rem;
+}
+
+/* --- Category List View --- */
+
+.bt-tripcard-list {
+    border-radius: 0px;
+    position: relative;
+}
+
+.bt-tripcard-list .bt-bookmark {
+    position: absolute;
+    right: 1.4rem;
+    top: -0.2rem;
+}
+
+.bt-tripcard-list .bt-star-rating {
+    margin-top: 15px;
+    font-size: 120%;
+    text-align: left;
+}
+
+.bt-trip-button {
+    text-align: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.bt-tripcard-list {
+    margin: 25px auto;
+}
+
+.bt-tripcard-list-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    position: relative;
+    color: white;
+    height: 100%;
+}
+
+.bt-tripcard-list-image .bt-ribbon {
+    margin-left: -0.5rem;
+    top: 1rem;
+}
+
+.bt-trip-desc {
+    text-align: left;
+}
+
+.bt-tripcard-list .bt-trip-meta-1 {
+    text-align: center;
+}
+
+.bt-star-rating {
+    color: var(--bt-accent);
+    text-align: right;
+    margin-bottom: 0.5rem;
+    min-width: 140px;
+}
+
+.bt-bookmark {
+    position: relative;
+    top: -1rem;
+    font-size: 1.5rem;
+}
+
+.bt-bookmark a {
+    color: var(--bt-primary);
+}
+
+.bt-bookmark a:hover {
+    color: var(--bt-primary-dark);
+}
+
+/* --- Trip Price Styles --- */
+.bt-tripcard-list .bt-trip-price {
+    color: var(--bt-charcoal);
+    line-height: 0.9;
+    font-size: 160%;
+    font-weight: bold;
+}
+
+.bt-ribbon {
+    background-color: #FF5C00;
+    font-size: .8rem;
+    height: 1.5rem;
+    padding: .2rem 1rem;
+    position: absolute;
+    margin-left: -1.5rem;
+    z-index: 10;
+}
+
+.bt-ribbon span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: -1;
+    border-left: .25rem solid transparent;
+    border-right: .25rem solid var(--bt-accentdark);
+    border-bottom: .25rem solid transparent;
+    border-top: .25rem solid var(--bt-accentdark);
+}
+
+.bt-ribbon:after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: -1;
+    border-top: 1.5rem solid var(--bt-accent);
+    border-bottom: 0rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-left: 0rem solid transparent;
+}
+
+/* --- Footer --- */
+
+.bt-footer-main {
+    background-color: var(--bt-grey);
+    color: white;
+}
+
+.bt-footer-main a {
+    color: white;
+}
+
+.bt-footer-main a:hover {
+    text-decoration: none;
+    color: var(--bt-primary)
+}
+
+.bt-footer-subscribe {
+    background-color: var(--bt-primary);
+    padding: 2rem 0rem;
+    color: white;
+}
+
+.bt-footer-subscribe p {
+    font-family: var(--bt-font-header);
+    font-size: 3rem;
+    line-height: .9;
+}
+
+.bt-footer-social a {
+    margin-left: .5rem;
+}
+
+.bt-share-sm {
+    text-align: center;
+    margin-top: -1rem;
+    color: var(--bt-grey);
+}
+
+.bt-share-sm a {
+    color: var(--bt-grey);
+    padding-left: .5rem;
+    font-size: 1.25rem;
+}
+
+.bt-share-sm a:hover {
+    color: var(--bt-primary);
+}
+
+#bt-scrolltop {
+    width: 3rem;
+    height: 2rem;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 2rem;
+    z-index: 100;
+    border: none;
+    outline: none;
+    background-color: var(--bt-primary);
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: white;
+  }
+  
+  #bt-scrolltop:hover {
+    background-color: var(--bt-primary-dark);
+  }
+
+/*----------------------
+# TRIP PAGE STYLING
+----------------------*/
+
+.bt-tourguide {
+    text-align: center;
+}
+
+/* Video Modal */
+
+/* The Modal (background) */
+.bt-video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .75);
+  }
+
+/* Modal Content */
+.bt-video-modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+/* The Close Button */
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+    display: none;
+}
+
+.bt-iframe-cont { 
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.bt-iframe-resp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bt-trip-details {
+    text-align: center;
+}
+
+.bt-trip-details span {
+    font-size: .8rem;
+}
+
+.bt-trip-details h6 {
+    color: var(--bt-primary);
+    margin:.25rem 0rem;
+}
+
+.bt-trip-details-book {
+    text-align: center;
+}
+
+.bt-trip-code span {
+    color: #999;
+}
+
+.bt-enquire {
+    font-size: 1.25rem;
+    margin: .5rem 0rem;
+}
+
+.bt-book-button {
+    text-align: center;
+}
+
+.bt-tour-tabs p {
+    color: #777;
+}
+
+.bt-tour-tabs h2, .bt-tour-tabs h3, .bt-tour-tabs h4, .bt-tour-tabs h5, .bt-tour-tabs h6 {
+    color: var(--bt-primary);
+}
+
+.bt-tour-gallery img {
+    max-width: 100%;
+    margin: 5px 0;
+}
+
+.bt-tour-gallery .col-md-4 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/*----------------------
+# MEDIA QUERIES
+----------------------*/
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .bt-tripcard-list .bt-trip-meta-1 {
+        text-align: left;
+    }
+    .bt-trip-details {
+        text-align: left;
+    }
+    .bt-jumbo-header h1 {
+        font-size: 5rem;
+    }
+    #bt-scrolltop {
+        bottom: 0rem;
+    }
+    .bt-tourguide {
+        text-align: left;
+    }
+    .bt-tourguide-text {
+        border-right: 1px solid #e6e6e6;
+    }
+    .bt-tourguide-facts {
+        text-align: right;
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .bt-trip-button {
+        margin-top: 0rem;
+    }
+    .bt-trip-code{
+        text-align: left;
+    }
+    .bt-jumbo-header h1 {
+        font-size: 5.5rem;
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .bt-tripcard-list .bt-star-rating {
+        text-align: right;
+        width: unset;
+    }
+    .bt-trip-details-book {
+        text-align: left;
+    }
+    .bt-trip-button {
+        margin-top: 0rem;
+        width: unset;
+    }
+    .bt-enquire {
+        text-align: right;
+    }
+    .bt-share-sm {
+        text-align: right;
+    }
+    .bt-trip-details hr {
+        display: none;
+    }
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .bt-jumbo-header h1 {
+        font-size: 6.5rem;
+    }
+ }

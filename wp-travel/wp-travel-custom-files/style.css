@@ -1,0 +1,168 @@
+/*
+Theme Name: OceanWP Child
+Theme URI: https://oceanwp.org/
+Description: OceanWP WordPress theme example child theme.
+Author: Nick
+Author URI: https://oceanwp.org/
+Template: oceanwp
+Version: 1.0
+*/
+
+/* Parent stylesheet should be loaded from functions.php not using @import */
+
+/* WP Travel Styling */
+/*
+.wp-travel-content {
+    width: 100%;
+    max-width: 100%;
+}
+.bt-itinerary-header {
+    background: no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 390px;
+    min-height: 390px;
+    display: block;
+    position: relative;
+    padding: 10% 5% 5%;
+    margin-top: -90px;
+}
+.bt-header-container {
+    max-width: 1200px;
+    margin: auto;
+}
+.bt-itinerary-header-h1 {
+    color: #FFFFFF;
+    border: none;
+    font-size: 72px;
+    position: relative;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.bt-overlay-50 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0 ,0, 0, 0.5);
+}
+.bt-itinerary-header-info > .wp-travel-trip-time > .wt-icon-regular {
+    display: none;
+}
+.bt-itinerary-header-info > .wp-travel-trip-time > span {
+    color: #FF5C00;
+    font-size: 24px;
+    text-transform: uppercase;
+    position: relative;
+    font-family: anton;
+}
+.bt-itinerary-wrapper {
+    max-width: 1200px;
+    margin: 25px auto;
+}
+.bt-itinerary-wrapper .bt-itinerary-details .wp-travel-add-to-wishlists {
+    font-size: 16px;
+    color: #FF5C00;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    border: solid #FF5C00 2px;
+    padding: 5px 15px;
+    margin: 15px 5px;
+}
+.bt-itinerary-wrapper .bt-itinerary-details .wp-travel-add-to-wishlists:hover {
+    color: #FFFFFF;
+    background-color: #FF5C00;
+    border: solid #FF5C00 2px;
+    padding: 5px 15px;
+}
+.bt-itinerary-details {
+    width: 100%;
+    text-align: center;
+}
+.trip-short-desc {
+    display: none;
+}
+.bt-trip-short-desc {
+    font-size: 22px;
+    line-height: 1.4;
+    color: #999;
+    padding: 15px;
+    text-align: center;
+}
+.wp-travel-average-review {
+    font-size: 30px;
+}
+.wp-travel-trip-detail {
+    width: 100%;
+    float: left;
+    line-height: 1.4;
+    text-align: center;
+    padding: 10px 0px;
+}
+.trip-price {
+    font-size: 32px;
+}
+.wp-travel-average-review {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    height: auto;
+}
+.wp-travel-average-review:before {
+    float: none;
+    position: relative;
+}
+.trip-short-desc {
+    clear: both;
+}
+.wp-travel-trip-meta-info {
+    border: 1px solid rgba(222,222,222,.49);
+    background-color: aliceblue;
+    padding: 10px;
+    margin: 15px 0px 25px;
+    border-radius: 5px;
+    clear: both;
+}
+.wp-travel-trip-meta-info ul li {
+    padding: 20px 25px 20px 25px;
+    display: inline-block;
+    vertical-align: top;
+    width: unset;
+    margin-right: 0;
+    margin-top: 0;
+    font-size: 16px;
+    position: unset;
+    text-align: center;
+}
+.wp-travel-offer span:before {
+    display: none;
+}
+
+/* General Styling *
+.site-breadcrumbs {
+    position: unset;
+    right: 0;
+    text-align: right;
+    top: 0;
+    max-width: 1200px;
+    height: 32px;
+    line-height: 32px;
+    margin: auto;
+    margin-top: 0;
+    font-size: 16px;
+    color: #c6c6c6;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Media Queries *
+
+@media (max-width: 992px) {
+    .wp-travel.trip-headline-wrapper .right-plot-inner-wrap {
+        padding: 25px 25px;
+    }
+}
+*/

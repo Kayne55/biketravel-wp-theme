@@ -1,0 +1,1362 @@
+/*
+Theme Name: BikeTravel (Beta)
+Text Domain: Bike Travel
+Version: 0.0.6
+Description: This is a custom developed Wordpress theme for Bike Travel - Motorcycle Tours & Self-Guided Holidays.
+Tags: Custom, Responsive, Travel
+Author: Kayne Jeacocks
+Author URI: http://dev.fivefive.co.za
+*/
+
+/*-------------------
+# BOOTSTRAP OVERRIDES
+-------------------*/
+
+:root {
+  --primary: #00B2AF;
+  --primary: var(--bt-primary) !important;
+  --secondary: #FF5C00;
+  --secondary: var(--bt-accent) !important;
+}
+
+/* --- LAYOUT GRID --- */
+
+.col {
+  display: unset;
+}
+
+/* --- NAVBAR --- */
+
+.nav-item a {
+  display: block;
+  padding: .5rem 1rem;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-light .navbar-nav .nav-link, .dropdown-item {
+  color: #00B2AF;
+  color: var(--bt-primary);
+  font-size: 20px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: var(--bt-primary-dark);
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .dropdown-item:hover {
+  color: #FF5C00;
+  color: var(--bt-accent);
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav a {
+      padding-left: 1.5rem;
+  }
+}
+
+/* --- BUTTONS --- */
+
+.submit {
+  border: 1px solid;
+  padding: .5rem 1rem;
+  text-align: right;
+}
+
+.btn {
+  border-radius: 0px;
+  padding: .2rem 1rem;
+  line-height: 1.4;
+}
+
+.btn-primary, .submit {
+  color: #fff;
+  background-color: #00B2AF;
+  background-color: var(--bt-primary);
+  border-color: #00B2AF;
+  border-color: var(--bt-primary);
+}
+
+.btn-primary:hover, .submit:hover {
+  color: #fff;
+  background-color: #00807D;
+  background-color: var(--bt-primary-dark);
+  border-color: #00807D;
+  border-color: var(--bt-primary-dark);
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #FF5C00;
+  background-color: var(--bt-accent);
+  border-color: #FF5C00;
+  border-color: var(--bt-accent);
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #B24000;
+  background-color: var(--bt-accentdark);
+  border-color: #B24000;
+  border-color: var(--bt-accentdark);
+}
+
+.btn-outline-primary {
+  color: #00B2AF;
+  color: var(--bt-primary);
+  border-color: #00B2AF;
+  border-color: var(--bt-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: #00B2AF;
+  background-color: var(--bt-primary);
+  border-color: #00B2AF;
+  border-color: var(--bt-primary);
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: var(--bt-primary-dark);
+  border-color: var(--bt-primary-dark);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #00B2AF;
+  border-color: #00B2AF;
+}
+
+/* --- Dropdowns --- */
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #00B2AF;
+}
+
+/* --- PILLS --- */
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: var(--bt-primary);
+}
+
+/* --- Collapsable Menus --- */
+
+.btn-link {
+  font-weight: 400;
+  color: var(--bt-primary);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  font-weight: 400;
+  color: var(--bt-primary-dark);
+  text-decoration: none;
+}
+
+.btn-link.focus, .btn-link:focus {
+  text-decoration: none;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+/*-------------------------
+# BIKE TRAVEL CUSTOM STYLES
+-------------------------*/
+
+/* --- GLOBAL CSS VARIABLES --- */
+
+:root {
+  /* Bike Travel Variables */
+  --bt-primary: #00B2AF;
+  --bt-primary-dark: #00807D;
+  --bt-accent: #FF5C00;
+  --bt-accentdark: #B24000;
+  --bt-lightgrey: #e6e6e6;
+  --bt-grey: #777;
+  --bt-darkgrey: #555;
+  --bt-charcoal: #333;
+  --bt-font-header: 'Teko';
+  --bt-font-subheader: 'Helvetica', 'Open Sans', sans-serif;
+  
+  /* Bootstrap Variable Overrides */
+  --blue: #00B2AF;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #00B2AF;
+  --secondary: #FF5C00;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* --- COLORS --- */
+
+.bt-bgprimary {
+  background-color: #00B2AF;
+  background-color: var(--bt-primary);
+}
+
+.bt-fontprimary {
+  color: #00B2AF;
+  color: var(--bt-primary); 
+}
+
+.bt-border-primary {
+  border-color: #00B2AF;
+  border-color: var(--bt-primary);
+}
+
+.bt-bgsecondary {
+  background-color: #FF5C00;
+  background-color: var(--bt-accent);
+}
+
+.bt-fontsecondary {
+  color: #FF5C00;;
+  color: var(--bt-accent);
+}
+
+.bt-border-secondary {
+  border-color: #FF5C00;;
+  border-color: var(--bt-accent);
+}
+
+/* --- FONTS --- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica', 'Open Sans', sans-serif; /* Fallback */
+  font-family: var(--bt-font-subheader);
+  color: #777; /* Fallback */
+  color: var(--bt-grey);
+  line-height: 1.4;
+  margin-top: 95px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Teko', 'Helvetica', 'Open Sans', sans-serif; /* Fallback */
+  font-family: var(--bt-font-header);
+  font-weight: 400 !important;
+  line-height: 1;
+}
+
+h1, .col h1 {
+  font-family: 'Teko', 'Helvetica', 'Open Sans', sans-serif; /* Fallback */
+  font-family: var(--bt-font-header);
+  font-weight: 700 !important;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+h2, .col h2 {
+  font-size: 2rem;
+}
+
+h3, .col h3 {
+  font-size: 1.75rem
+}
+.col h3 {
+  margin-top: unset;
+  font-weight: unset;
+  margin-bottom: unset;
+  flex-basis: unset;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+.bt-display-heading {
+  font-family: var(--bt-font-header);
+}
+
+.bt-section-heading {
+  font-size: 3rem;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  margin: 4rem 0 2rem;
+}
+
+a {
+  color: var(--bt-primary);
+  transition: color 200ms ease;
+}
+
+a:hover {
+  color: var(--bt-primary-dark);
+  text-decoration: none;
+}
+
+/* --- Navigation --- */
+
+.bt-header-brand {
+  width: 100%;
+  max-width: 100px;
+  transition: 0.4s;
+}
+
+.bt-header-brand img {
+  width: 100%;
+}
+
+.bt-topnav {
+  max-height: 35px;
+  padding: .25rem 0;
+  font-size: 12px;
+  text-transform: capitalize;
+  overflow: hidden;
+  background-color: #ccc; /* Fallback */
+  background-color: var(--bt-lightgrey);
+}
+
+.bt-topnav a {
+  color: #777; /* Fallback */
+  color: var(--bt-grey);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 0;
+}
+
+.bt-topnav a:hover {
+  color: #00B2AF; /* Fallback */
+  color: var(--bt-primary);
+}
+
+.bt-topnav ul {
+  padding: 0;
+}
+
+.bt-topnav>ul>li>form>select {
+  height: 22px;
+  margin-right: -10px;
+  padding: 1px;
+  font-size: 10px;
+}
+
+.bt-topnav li:first-child a::after {
+  content: "";
+  border-right: 2px solid #777;
+  margin: 0 1rem;
+}
+
+.bt-topnav li:last-child {
+  padding-left: 1rem;
+}
+
+.bt-navbar {
+  background-color: white !important;
+}
+
+.bt-navbar-sticky {
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.bt-navbar ul li a {
+  font-family: 'Teko', 'Helvetica', 'Open Sans', sans-serif;
+  font-family: var(--bt-font-header);
+}
+
+  /* --- Article Page Styling --- */
+
+.bt-article figure img {
+    width: 100%;
+    height: auto;
+}
+
+.bt-article figcaption {
+    font-size: 0.65rem;
+    text-align: center;
+}
+
+/* --- Jumbotron Header --- */
+
+.bt-jumbo-header {
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  word-break: break-word;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.bt-jumbo-header h1 {
+  line-height: 0.8;
+  text-transform: uppercase;
+  font-size: 3rem;
+
+}
+
+.bt-jumbo-header a {
+  color: white;
+}
+
+.bt-jumbo-header a:hover {
+  color: var(--bt-primary);
+}
+
+.bt-jumbo-header .container {
+  position: relative;
+}
+
+/* --- Utilities --- */
+
+/* Overlays */
+
+.bt-overlay-30  {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+}
+
+#bt-NavOverlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  height: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.bt-NavOverlayContent {
+  padding: 2rem;
+  color: white;
+}
+
+.bt-NavOverlayClose {
+  text-align: center;
+  padding: 2rem 0 0;
+}
+
+.bt-NavOverlayClose i {
+  cursor: pointer;
+  color: white
+}
+
+.bt-NavOverlayClose i:hover {
+  cursor: pointer;
+  color: white;
+  font-size: 120%;
+  transition: 0.3s;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#bt-NavOverlay::-webkit-scrollbar {
+  display: none;
+}
+
+/* Remove Focus Styles for Non Keyboard User */
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+/* Accordions */
+.bt-accordion {
+  background-color: white;
+}
+
+.bt-accordion-heading {
+  font-family: var(--bt-font-header);
+  font-size: 1.4rem;
+  color: var(--bt-primary);
+  background-color: white;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid var(--bt-lightgrey);
+  outline: none;
+  transition: 0.4s;
+}
+
+.bt-accordion-heading:hover {
+  color: var(--bt-primary-dark);
+  background-color: var(--bt-lightgrey);
+}
+
+.bt-accordion-content {
+  transition: ease-in 0.4s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.bt-accordion-content-inner {
+  padding: 1rem;
+}
+
+.bt-accordion-heading:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 1.2rem;
+  color: #00B2AF;
+  float: right;
+  margin-left: 1rem;
+}
+
+.bt-active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* --- Homepage Search Box --- */
+
+.bt-searchbox-home {
+  margin-top: -4rem;
+}
+
+.bt-searchbox-home h3 {
+  font-size: 1.2rem;
+}
+
+.bt-searchbox-home form input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0px;
+  line-height: 1.2;
+  height: 25px;
+  font-size: 0.8rem;
+}
+
+/* --- Alignment --- */
+
+.bt-align-v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Flip Boxes --- */
+
+.bt-flipbox {
+  background-color: transparent;
+  width: 100%;
+  height: 120px;
+  perspective: 1000px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.bt-flipbox i {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.bt-flipbox p {
+  line-height: 1.2;
+}
+
+.bt-flipbox h3 {
+  line-height: 1;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.bt-flipbox-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.bt-flipbox:hover .bt-flipbox-inner {
+  transform: rotateX(180deg);
+}
+
+.bt-flipbox-front, .bt-flipbox-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.bt-flipbox-front {
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+.bt-flipbox-back {
+  background-color: #FF5C00;
+  color: white;
+  transform: rotateX(180deg);
+}
+
+/* --- Bike Travel Buttons --- */
+
+.bt-button-xs {
+  font-size: 0.9rem;
+}
+
+.bt-button-xl {
+  padding: .5rem 1rem;
+}
+
+/* --- Pages, Articles, Comments, Meta --- */
+
+.bt-pagewrapper {
+  margin-top: 140px;
+}
+
+.bt-article h1 {
+  color: var(--bt-charcoal);
+  font-size: 4rem;
+}
+
+.bt-article-meta {
+  font-size: .75rem;
+}
+
+.bt-article-meta span {
+  padding: 0 .5rem;
+}
+
+.bt-article-meta span:not(:last-child) {
+  border-right: 1px solid #777;
+}
+
+.bt-article-meta a {
+  color: #777;
+}
+
+.bt-article-meta a:hover {
+  color: var(--bt-primary);
+}
+
+.bt-article-tags {
+  text-transform: uppercase;
+  font-size: .65rem;
+}
+
+.avatar {
+  border-radius: 100%;
+}
+
+.comment-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+.comment-list .children {
+	padding-left: 1rem;
+  list-style: none;
+}
+
+.comment {
+  margin: 1rem .25rem;
+}
+
+.comment-body {
+	padding:1rem;
+  	border-bottom: 1px solid #ddd;
+}
+
+.comment-reply-title {
+  font-family: var(--bt-font-header);
+}
+
+.comment-textarea textarea {
+	width: 100%;
+	padding: .25rem;
+  	border: 1px solid #ddd;
+  	border-radius: 6px;
+ 	color:#777;
+}
+
+.comment-form .form-submit {
+  text-align: right;
+}
+
+.comment-edit-link {
+	padding: .25rem .5rem;
+    color: white;
+    background-color: var(--bt-primary);
+}
+
+.comment-edit-link:hover {
+	background-color: var(--bt-primary-dark);
+	color: white;
+}
+
+/*----------------------
+# ARCHIVE PAGES
+----------------------*/
+
+.bt-archive:not(:last-child) {
+  border-bottom: 1px solid #bbb;
+}
+
+/*----------------------
+# WP TRAVEL STYLING OVERRIDES
+----------------------*/
+
+/* --- Search & Filter Form Styling ---*/
+
+.widget_wp_travel_filter_search_widget .wp-travel-itinerary-items {
+  padding: 1rem;
+    color: #777;
+    background-color: white;
+}
+
+.widget_wp_travel_filter_search_widget input, .widget_wp_travel_filter_search_widget select {
+  border: solid 1px grey;
+  border-radius: 3px;
+  padding: 3px;
+  color: grey;
+}
+
+.wp-trave-price-range .ui-widget.ui-widget-content {
+  border: none;
+  border-radius: 10px;
+  background-color: var(--bt-primary);
+  cursor: pointer;
+}
+
+.wp-trave-price-range .ui-button, .wp-trave-price-range .ui-state-default, .wp-trave-price-range .ui-widget-content .ui-state-default, .wp-trave-price-range .ui-widget-header .ui-state-default, html .wp-trave-price-range .ui-button.ui-state-disabled:active, html .wp-trave-price-range .ui-button.ui-state-disabled:hover {
+  border: 1px solid var(--bt-primary);
+  background: var(--bt-primary);
+  font-weight: 400;
+  color: var(--bt-primary);
+  cursor: e-resize;
+}
+
+.widget_wp_travel_filter_search_widget .trip-duration-calender {
+  width: 40%;
+  display: block;
+  float: left;
+  margin: 0 0.25rem 1rem;
+  position: relative;
+}
+
+.widget_wp_travel_filter_search_widget .trip-duration-calender .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field select, .widget_wp_travel_filter_search_widget .trip-duration-calender .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field textarea, .widget_wp_travel_filter_search_widget .trip-duration-calender input, .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field .widget_wp_travel_filter_search_widget .trip-duration-calender select, .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field .widget_wp_travel_filter_search_widget .trip-duration-calender textarea {
+  max-width: unset;
+  display: block;
+  padding-left: 1rem;
+}
+
+.widget_wp_travel_filter_search_widget .trip-duration-calender .calender-icon {
+  position: absolute;
+  top: 1.65rem;
+  left: 0.25rem;
+  width: unset;
+  font-size: 1.15rem;
+  text-align: center;
+  line-height: unset;
+  background: unset;
+}
+
+.widget_wp_travel_filter_search_widget .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field select[type=submit], .widget_wp_travel_filter_search_widget .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field textarea[type=submit], .widget_wp_travel_filter_search_widget input[type=submit], .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field .widget_wp_travel_filter_search_widget select[type=submit], .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field .widget_wp_travel_filter_search_widget textarea[type=submit] {
+  color: var(--bt-primary);
+  background-color: white;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--bt-primary);
+  border-radius: 0;
+  font-size: 1.25rem;
+}
+
+.widget_wp_travel_filter_search_widget .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field select[type=submit]:hover, .widget_wp_travel_filter_search_widget .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field textarea[type=submit]:hover, .widget_wp_travel_filter_search_widget input[type=submit]:hover, .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field .widget_wp_travel_filter_search_widget select[type=submit]:hover, .wp-travel-tab-wrapper .wp-travel-booking-form-wrapper form .wp-travel-form-field .widget_wp_travel_filter_search_widget textarea[type=submit]:hover {
+  color: white;
+  background-color: var(--bt-primary);
+  font-size: 1.25rem;
+  transition: 0.3s
+}
+
+
+/* --- Trip Cards --- */
+
+.bt-tripcard {
+  box-shadow: 0px 0px 10px rgba(70, 31, 31, 0.3);
+  border: none;
+  border-radius: 0px;
+}
+
+/* --- Category Grid View --- */
+
+.bt-tripcard-grid {
+  max-width: 32rem;
+  min-height: 18rem;
+  max-height: 32rem;
+  margin: 25px auto;
+}
+
+.bt-tripcard-grid-image {
+  height: 14rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 1rem;
+  color: white;
+}
+
+.bt-tripcard-title {
+  text-align: center;
+  position: relative;
+  height: 10.5rem;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.bt-tripcard-title h3 {
+  font-size: 2rem;
+  line-height: 1;
+  height: 10.5rem;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bt-tripcard-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -1rem;
+}
+
+.bt-tripcard-location, .bt-tripcard-duration {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bt-tripcard-grid .card-body {
+  padding: .8rem 1rem 1rem 1rem;
+}
+
+/* --- Category List View --- */
+
+.bt-tripcard-list {
+  border-radius: 0px;
+  position: relative;
+  width: 100%;
+}
+
+.bt-tripcard-list .bt-bookmark a {
+  position: absolute;
+  right: 1.4rem;
+  top: -0.2rem;
+}
+
+.bt-tripcard-list .bt-bookmark a:hover {
+  color: var(--bt-primary-dark);
+}
+
+.bt-tripcard-list .bt-bookmark i {
+  font-size: 1.5rem;
+}
+
+.bt-tripcard-list .bt-star-rating {
+  font-size: 120%;
+  text-align: left;
+}
+
+.bt-trip-button {
+  text-align: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.bt-tripcard-list {
+  margin: 25px auto;
+}
+
+.bt-tripcard-list-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
+  position: relative;
+  color: white;
+  height: 100%;
+}
+
+.bt-tripcard-list-image .bt-ribbon {
+  margin-left: -0.5rem;
+  top: 1rem;
+}
+
+.bt-view-gallery a {
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.bt-view-gallery a:hover {
+  color: var(--bt-primary);
+}
+
+.bt-trip-desc {
+  text-align: left;
+}
+
+.bt-tripcard-list .bt-trip-meta-1 {
+  text-align: center;
+}
+
+.bt-star-rating {
+  color: var(--bt-accent) !important;
+  text-align: right;
+  margin-bottom: 0.5rem;
+  min-width: 140px;
+}
+
+.wp-travel-average-review::before {
+  color: var(--bt-accent);
+}
+
+.wp-travel-average-review span {
+  color: var(--bt-accent);
+}
+
+.bt-bookmark {
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
+}
+
+.bt-bookmark a {
+  color: var(--bt-primary);
+}
+
+.bt-bookmark a:hover {
+  color: var(--bt-primary-dark);
+}
+
+/* --- Trip Price Styles --- */
+.bt-trip-price {
+  color: var(--bt-charcoal);
+  line-height: 0.9;
+  font-size: 160%;
+  font-weight: bold;
+}
+
+.bt-price-from {
+  color: #999;
+  font-weight: bold;
+  font-size: 70%;
+  text-transform: lowercase;
+}
+
+.bt-ribbon {
+  background-color: #FF5C00;
+  font-size: .8rem;
+  height: 1.5rem;
+  padding: .2rem 1rem;
+  position: absolute;
+  margin-left: -1.5rem;
+  z-index: 10;
+}
+
+.bt-ribbon span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: -1;
+  border-left: .25rem solid transparent;
+  border-right: .25rem solid var(--bt-accentdark);
+  border-bottom: .25rem solid transparent;
+  border-top: .25rem solid var(--bt-accentdark);
+}
+
+.bt-ribbon:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  z-index: -1;
+  border-top: 1.5rem solid var(--bt-accent);
+  border-bottom: 0rem solid transparent;
+  border-right: .5rem solid transparent;
+  border-left: 0rem solid transparent;
+}
+
+/* --- WP Travel Resonsive Tabs --- */
+
+.wp-travel-tab-wrapper .tab-list.resp-tabs-list li {
+    font-family: var(--bt-font-header);
+    color: var(--bt-primary);
+    height: inherit;
+}
+
+/* --- WP TRAVEL MEDIA QUERY OVERRIDES --- */
+@media screen and (max-width: 767px) {
+  .col h3 {
+      display: table-cell;
+  }
+}
+
+/* --- Footer --- */
+
+.bt-footer-main {
+  background-color: var(--bt-grey);
+  color: white;
+}
+
+.bt-footer-main a {
+  color: white;
+}
+
+.bt-footer-main a:hover {
+  text-decoration: none;
+  color: var(--bt-primary)
+}
+
+.bt-footer-subscribe {
+  background-color: var(--bt-primary);
+  padding: 2rem 0rem;
+  color: white;
+}
+
+.bt-footer-subscribe p {
+  font-family: var(--bt-font-header);
+  font-size: 3rem;
+  line-height: .9;
+}
+
+.bt-footer-social a {
+  margin-left: .5rem;
+}
+
+.bt-share-sm {
+  text-align: center;
+  margin-top: -1rem;
+  color: var(--bt-grey);
+}
+
+.bt-share-sm a {
+  color: var(--bt-grey);
+  padding-left: .5rem;
+  font-size: 1.25rem;
+}
+
+.bt-share-sm a:hover {
+  color: var(--bt-primary);
+}
+
+#bt-scrolltop {
+  width: 3rem;
+  height: 2rem;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 5.5rem;
+  z-index: 999;
+  border: none;
+  outline: none;
+  background-color: var(--bt-primary);
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: white;
+}
+
+#bt-scrolltop:hover {
+  background-color: var(--bt-primary-dark);
+}
+
+/*----------------------
+# TRIP PAGE STYLING
+----------------------*/
+
+/* Hide the Rank Math Rich Snippet */
+#rank-math-rich-snippet-wrapper {
+  display: none;
+}
+
+.bt-tourguide {
+  text-align: center;
+}
+
+/* Video Modal */
+
+/* The Modal (background) */
+.bt-video-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, .75);
+}
+
+/* Modal Content */
+.bt-video-modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bt-iframe-cont { 
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.bt-iframe-cont iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bt-trip-details {
+  text-align: center;
+}
+
+.bt-trip-details h6 {
+  color: var(--bt-primary);
+  margin:.25rem 0rem;
+}
+
+.bt-trip-details-book {
+  text-align: center;
+}
+
+.bt-trip-code span {
+  color: #999;
+}
+
+.bt-enquire {
+  font-size: 1.25rem;
+  margin: .5rem 0rem;
+}
+
+.bt-book-button {
+  text-align: center;
+}
+
+.bt-tour-tabs p {
+  color: #777;
+}
+
+.bt-tour-tabs h2, .bt-tour-tabs h3, .bt-tour-tabs h4, .bt-tour-tabs h5, .bt-tour-tabs h6 {
+  color: var(--bt-primary);
+}
+
+.bt-tour-gallery img {
+  max-width: 100%;
+  margin: 5px 0;
+}
+
+.bt-tour-gallery .col-md-4 {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.tab-list-content {
+  margin: 2rem 0;
+}
+
+/* --- Itinerary Tab --- */
+
+.bt-itinerary-desc {
+  position: relative;
+  padding: .5rem;
+  border: 1px solid var(--bt-lightgrey);
+  border-radius: .25rem
+}
+
+.bt-itinerary-desc p {
+  max-height: 300px;
+  overflow-y: scroll;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.bt-itinerary-desc p::-webkit-scrollbar {
+  display: none;
+}
+
+.bt-itinerary-desc .fa-chevron-up, .bt-itinerary-desc .fa-chevron-down {
+  position: absolute;
+  right: .25rem;
+}
+
+.bt-itinerary-desc .fa-chevron-up {
+  top: .25rem;
+}
+
+.bt-itinerary-desc .fa-chevron-down {
+  bottom: .25rem;
+}
+
+/*----------------------
+# MEDIA QUERIES
+----------------------*/
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  .bt-tripcard-list .bt-trip-meta-1 {
+      text-align: left;
+  }
+  .bt-jumbo-header h1 {
+      font-size: 3rem;
+  }
+  .bt-tourguide {
+      text-align: left;
+  }
+  .bt-tourguide-text {
+      border-right: 1px solid #e6e6e6;
+  }
+  .bt-tourguide-facts {
+      text-align: right;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .bt-trip-button {
+    margin-top: 0rem;
+  }
+  .bt-trip-code{
+    text-align: left;
+  }
+  .bt-jumbo-header h1 {
+    font-size: 5rem;
+  }
+  .bt-tripcard-title h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .bt-tripcard-list .bt-star-rating {
+      text-align: right;
+      width: unset;
+  }
+  .bt-trip-details-book {
+      text-align: left;
+  }
+  .bt-trip-button {
+      margin-top: 0rem;
+      width: unset;
+  }
+  .bt-enquire {
+      text-align: right;
+  }
+  .bt-share-sm {
+      text-align: right;
+  }
+  .bt-trip-details hr {
+      display: none;
+  }
+  .bt-trip-details {
+    text-align: left;
+  }
+  .bt-itinerary-desc p {
+    max-height: 135px;
+  }
+  .bt-itinerary-date {
+    position: absolute;
+    top: .25rem;
+    right: 1.5rem;
+  }
+  .bt-tripcard-title h3 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  .bt-jumbo-header h1 {
+      font-size: 5rem;
+  }
+}

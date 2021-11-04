@@ -1,0 +1,32 @@
+
+:root {
+    --bt-primary: #00B2AF;
+    --bt-accent: #FF5C00;
+    --bt-darkorange: #B24000;
+    --bt-lightgrey: #ccc;
+    --bt-grey: #999;
+    --bt-darkgrey: #444;
+    --bt-charcoal: #333;
+    --bt-font-header: 'Teko';
+}
+
+html {
+    line-height: 1.4;
+}
+
+.bt-topnav:not(.uk-navbar-transparent) {
+    height: 40px;
+    font-size: 14px;
+    text-transform: capitalize;
+    overflow: hidden;
+    background-color: #ccc; /* Fallback */
+    background-color: var(--bt-lightgrey);
+}
+
+.bt-topnav .uk-navbar .uk-navbar-nav>li>a, .bt-topnav .uk-navbar .uk-navbar-nav>li, .uk-navbar-toggle {
+    min-height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Helvetica Neue","Noto Sans",sans-serif;
+    text-transform: capitalize;
+}
